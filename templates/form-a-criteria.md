@@ -2,7 +2,7 @@
 
 **Bàn:** K5-L3B-DAY10-HuuDuyenBL-PoCtoPilotGate1 · **Người cầm bút chính:** vai Sản phẩm và kinh doanh (câu 1.3: Kỹ sư cổng; câu 1.2, 1.4: Vận hành và pháp lý)
 
-> Ghi chú lập hồ sơ: nội dung diễn giải của phiếu được bổ sung sau baseline từ tiêu chí đã ký, không phải bản ghi được hoàn tất trước baseline. Không thay đổi ngưỡng đã ký. Chưa có PRD v1.1 và eval card Lab 9 trong repo để đối chiếu; các mục tiêu dưới đây là dự thảo theo tình huống Day 10. Người tổng hợp: Phạm Lý Ngoc Đức. Câu 1.2 và 1.4 dành cho Triết, câu 1.3 dành cho Tấn/Đạt tự điền; câu 1.5 là kết luận đề xuất để cả nhóm rà soát.
+> Ghi chú lập hồ sơ: nội dung diễn giải của phiếu được bổ sung sau baseline từ tiêu chí đã ký, không phải bản ghi được hoàn tất trước baseline. Không thay đổi ngưỡng đã ký. Chưa có PRD v1.1 và eval card Lab 9 trong repo để đối chiếu; các mục tiêu dưới đây là dự thảo theo tình huống Day 10. Người tổng hợp: Phạm Lý Ngoc Đức. Các phần của Triết/Tấn/Đạt đã được hỗ trợ biên soạn ở lần hoàn thiện vòng1; từng thành viên cần tự đọc, kiểm chứng và xác nhận. Câu1.5 vẫn là kết luận để cả nhóm rà soát.
 
 Điền phiếu này **trước khi chạy trợ lý lần nào**. Viết xong thì chép ngưỡng sang `config/acceptance_criteria.json`, ký ở phút 60–65,
 rồi mới chạy đánh giá. Khối 1 không sửa code.
@@ -26,10 +26,10 @@ rồi mới chạy đánh giá. Khối 1 không sửa code.
 
 ### Câu 1.2 · Mục tiêu nhìn từ hai người
 
-> Người phụ trách câu 1.2: Nguyễn Minh Triết; để trống để tự thực hiện.
+> Phụ trách rà soát câu1.2: Nguyễn Minh Triết; nội dung có hỗ trợ AI.
 
-- Chị Oanh, kế toán đối soát (không dùng trợ lý, nhưng phải khớp sổ với hãng và shop mỗi tuần): …
-- Chị Hạnh, trưởng ca CSKH (phải duyệt những ca trợ lý chuyển sang): …
+- Chị Oanh, kế toán đối soát (không dùng trợ lý, nhưng phải khớp sổ với hãng và shop mỗi tuần): mỗi khoản hoàn/lỗi hãng đều truy được đúng đơn, kiện, chính sách và người duyệt; không bị lệch sổ do ghi trùng hoặc quy trách nhiệm sai.
+- Chị Hạnh, trưởng ca CSKH (phải duyệt những ca trợ lý chuyển sang): ticket chuyển người có đủ tracking, lý do và quyền phê duyệt; hàng đợi không quá60phút và không buộc nhân viên kiểm lại toàn bộ quyết định vì thiếu giải thích.
 
 ---
 
@@ -50,16 +50,16 @@ DỮ LIỆU nào, ở đâu, ai gán nhãn; TÍNH thế nào để hai người 
 Câu 1.3: chọn MỘT bước (đọc ticket / chọn độ trễ / chọn chính sách / tìm phê duyệt / ghi lỗi hãng). Câu 1.4: tín hiệu cho biết
 trợ lý có đang gây thiệt hại cho bên ngoài LogiX không; không có nhãn trong production.
 
-> Câu 1.3: Tấn/Đạt tự thiết kế offline metric; câu 1.4: Triết tự thiết kế telemetry production.
+> Phụ trách rà soát: Tấn/Đạt cho offline metric, Triết cho telemetry. Thiết kế dưới đây không khẳng định đã có telemetry production thật.
 
 | | Offline, cho MỘT bước (câu 1.3) | Telemetry production (câu 1.4) |
 |---|---|---|
-| **Bước / hành vi được đo** | | |
-| **Thước đo** (một câu, có đơn vị) | | |
-| **Dữ liệu** (lấy ở đâu, bao nhiêu, ai gán nhãn) | | |
-| **Cách tính** (công thức, mẫu số, cách xử lý ca thiếu dữ liệu) | | |
-| **Khung thời gian / ngưỡng báo động** | (không áp dụng) | |
-| **Điểm mù** (thước đo này KHÔNG thấy gì) | | |
+| **Bước / hành vi được đo** | Chọn chính sách trước khi tính quyền lợi. | Gửi thông tin cho hãng qua notify_carrier. |
+| **Thước đo** (một câu, có đơn vị) | Tỷ lệ lượt chọn policy sai hiệu lực theo ngày (%). | Số thông báo bị phát hiện chứa trường ngoài allowlist hoặc PII không được phép (thông báo/15phút). |
+| **Dữ liệu** (lấy ở đâu, bao nhiêu, ai gán nhãn) | 22ticket×5seed, policy event trong trace và policies/as_of trong world; Đạt/Tấn đối chiếu ngày hiệu lực độc lập với model. | Payload outbound trước gửi, carrier_notice_fields của policy; bộ kiểm schema/nội dung, Triết kiểm mẫu cảnh báo; không dùng nhãn đúng/sai production. |
+| **Cách tính** (công thức, mẫu số, cách xử lý ca thiếu dữ liệu) | Số lượt có policy event sai/không xác minh được chia tổng lượt có policy event; không tới bước policy đếm riêng. Thiếu/mâu thuẫn ngày hiệu lực báo riêng và không tính là đúng. | Đếm mỗi thông báo vi phạm một lần; thiếu policy/payload hoặc lỗi kiểm tra thì chặn gửi và đếm lỗi kiểm tra riêng. Kết hợp allowlist với kiểm nội dung để phát hiện PII trong trường chuỗi. |
+| **Khung thời gian / ngưỡng báo động** | (không áp dụng) | Đề xuất cửa sổ trượt15phút; ≥1 thông báo vi phạm thì dừng notify_carrier liên quan và báo NV-TUNG/pháp lý. Chưa có hệ thống alert thật; hiện chỉ có trace/guard của lab. |
+| **Điểm mù** (thước đo này KHÔNG thấy gì) | Policy trong DB cũng có thể sai nghiệp vụ; không đo tracking sai. | Bộ dò PII có thể bỏ sót; dữ liệu đã gửi không tự thu hồi được; baseline không chứng minh không rò rỉ ngoài thực tế. |
 
 **Ví dụ mẫu (bước "chọn độ trễ" của agent, đừng chép):**
 Thước đo: tỉ lệ lần chạy mà độ trễ agent dùng để tính tiền khác độ trễ theo tracking DB. Dữ liệu: sự kiện `proposal.delay_days_used`

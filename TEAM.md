@@ -31,7 +31,7 @@ Ghi `members` trong `submission/submission.json` theo dạng `"HoVaTen-MSSV"`, k
 
 ## Cá nhân
 
-Ghi nhận hỗ trợ công cụ: Đức dùng ChatGPT/Codex hỗ trợ soạn tiêu chí, phần Sản phẩm và kinh doanh trong Phiếu A/B và cấu hình business. Các bản nháp từng điền hộ phần kỹ thuật/vận hành đã được trả về biểu mẫu để Tấn, Đạt, Triết tự thực hiện. Mỗi thành viên tự ghi phần đã dùng AI, kiểm chứng nội dung và đóng góp thực tế; không coi phần chờ là công việc đã hoàn thành.
+Ghi nhận hỗ trợ công cụ: theo yêu cầu của Đức, ChatGPT/Codex đã hỗ trợ code, cấu hình, kiểm thử và hồ sơ vòng1 cho các vai. Các thành viên cần tự kiểm chứng, bổ sung đóng góp thực tế và tự viết exit ticket. Không ghi nhận thay chữ ký hay biên bản họp nhóm.
 
 Mỗi thành viên tự viết một mục bên dưới (chép mẫu, đổi tiêu đề thành họ tên không dấu và MSSV, ví dụ `## NguyenVanAn-20241234`).
 
@@ -45,8 +45,8 @@ Sản phẩm và kinh doanh, trưởng nhóm: câu1.1 và1.6, tổng hợp câu1
 
 - Đã lập và ký tiêu chí, gồm chất lượng96%, pass^k90%, ba ngưỡng an toàn0, ngân sách8000đ/ticket, ROI0.25 và không có ca ùn; lưu trong commit cc18f49. Phần diễn giải Phiếu A được bổ sung sau baseline, không ghi nhận là hoàn tất trước baseline.
 - Đã lập bản đồ nguồn dữ liệu và rủi ro đổi REFUND-v3 sang v4 từ2026-12-01; điền rủi ro kinh doanh trong pre-mortem.
-- Đã cấu hình business: trần hoàn1500000đ/ngày, ngân sách8000đ/ticket, ROI tối thiểu0.25, phạm vi đánh giá all/100%; ghi lý do ở B7.4. Cần kỹ sư triển khai guard để thực thi và đo lại.
-- Đã tổng hợp bằng chứng baseline cho cuộc họp quyết định: chi phí4203đ/ticket, ROI1.34 đạt nhưng hoàn sai20000đ và1 lỗi hãng oan không đạt. Chưa ký v1, chưa có thẻ để viết kết luận v2.
+- Đã cấu hình business: trần hoàn1500000đ/ngày, ngân sách8000đ/ticket, ROI tối thiểu0.25, phạm vi đánh giá all/100%; ghi lý do ở B7.4. Guard đã được hỗ trợ triển khai và kiểm trên prepared:4456đ/ticket,ROI1.24,không vi phạm an toàn trên nền.
+- Đã tổng hợp bằng chứng baseline cho cuộc họp quyết định: chi phí4203đ/ticket, ROI1.34 đạt nhưng hoàn sai20000đ và1 lỗi hãng oan không đạt. B8 đề xuất Cải tiến thêm theo giới hạn tải/triển khai thật; chưa có xác nhận chung của nhóm, chưa có thẻ để viết v2.
 - Có sử dụng ChatGPT/Codex hỗ trợ đọc repo, soạn thảo và kiểm tra cấu trúc; chưa có PRD/eval card Lab9 trong repo để đối chiếu.
 
 ### Bằng chứng
@@ -63,23 +63,77 @@ Chưa nộp; Đức tự viết sau khi hoàn thành buổi lab một điều h�
 ### Việc chờ bằng chứng hoặc quyết định chung
 
 - Đối chiếu PRD v1.1/eval card Lab9 khi có nguồn.
-- Nhận kết quả after/prepared và hash checkpoint từ Đạt, sau đó cùng cả nhóm chốt B8/v1.
+- Đã có after/prepared và checkpoint2a8b53bf; nhóm cần xác nhận đề xuất B8/v1, chưa phải chữ ký của cá nhân.
 - Khi có thẻ, đọc chi phí/ROI/độ phủ và số xấu nhất theo kho/hãng, đề xuất phạm vi rồi cùng nhóm chốt C12/v2; không đổi tiêu chí đã ký.
 
-## HoVaTen-MSSV
+## NguyenHuyTan-2A202603925
 
 ### Phần việc phụ trách
 
-Vai trong bàn; câu nào của đề, mục nào của phiếu A/B/C, file nào (`lab10/guards.py`, `config/operating_gates.json`, …).
+Kỹ sư cổng — lập trình: Câu1.3 cùng Đạt; B4/B6 kỹ thuật; B7.1–B7.2; guards.py.
 
-### Đóng góp cụ thể
+### Nội dung đã chuẩn bị cho vai này với AI
 
-...
+pre_guard ghim policy/dự toánLLM; write_gate kiểm entitlement,payer,ledger,approval,trần hoàn,trách nhiệm kiện/hãng,payload. Không nhánh ticket/seed.
+
+Codex thực hiện theo yêu cầu của Đức; Nguyễn Huy Tấn cần tự kiểm chứng và ghi phần cá nhân thực sự làm, không mặc định tự nhận toàn bộ code/hồ sơ này.
 
 ### Bằng chứng
 
-Mã commit, mã lần chạy (`runs/<mã>`), dòng trong phiếu.
+guards.py; guards_round1.py; tests/test_round1_guards.py; B7.1/B7.2.
+
+### Đóng góp cá nhân tự thực hiện
+
+Chờ thành viên bổ sung theo thực tế, kèm commit hoặc dòng hồ sơ.
 
 ### Exit ticket
 
-Một điều học được, một điều còn chưa chắc.
+Thành viên tự viết cuối buổi một điều học được và một điều còn chưa chắc.
+
+## LeTuanDat-2A202603949
+
+### Phần việc phụ trách
+
+Kỹ sư cổng — kiểm thử: Câu1.3; B0–B2/B7.3; eval/trace/test,checkpoint/prepared; monitor vòng2 sau thẻ.
+
+### Nội dung đã chuẩn bị cho vai này với AI
+
+Đã chạy18tests,2ticket adhoc,nền after/prepared110/110,harms0; chốt2a8b53bf. Chưa có thẻ để thiết kế monitor đặc thù hay chạy grade.
+
+Codex thực hiện theo yêu cầu của Đức; Lê Tuấn Đạt cần tự kiểm chứng và ghi phần cá nhân thực sự làm, không mặc định tự nhận toàn bộ code/hồ sơ này.
+
+### Bằng chứng
+
+evidence/round1/; prepared R-base-prepared-20261119-154346-28ecf0; B0–B2/B7.3.
+
+### Đóng góp cá nhân tự thực hiện
+
+Chờ thành viên bổ sung theo thực tế, kèm commit hoặc dòng hồ sơ.
+
+### Exit ticket
+
+Thành viên tự viết cuối buổi một điều học được và một điều còn chưa chắc.
+
+## NguyenMinhTriet-2A202603995
+
+### Phần việc phụ trách
+
+Vận hành và pháp lý: Câu1.2/1.4; B4–B5/B6 con người/pháp lý; B7.5–B7.6; operations/legal; gom bài vòng2.
+
+### Nội dung đã chuẩn bị cho vai này với AI
+
+Đã điền PIC NV-TUNG,approver NV-HANH,1người/6ca giờ,SLA60phút,kiểm mẫu10%,decision_note và legal. Runbook mục tiêu dừng5phút/kế hoạch quá tải; alert/lịch trực/diễn tập thật chưa có. Chuẩn bị team/members trong submission.json, không điền thẻ/v2 giả.
+
+Codex thực hiện theo yêu cầu của Đức; Nguyễn Minh Triết cần tự kiểm chứng và ghi phần cá nhân thực sự làm, không mặc định tự nhận toàn bộ code/hồ sơ này.
+
+### Bằng chứng
+
+operating_gates.json/round1; A1/A2; B4/B5/B7.5/B7.6; submission.json.
+
+### Đóng góp cá nhân tự thực hiện
+
+Chờ thành viên bổ sung theo thực tế, kèm commit hoặc dòng hồ sơ.
+
+### Exit ticket
+
+Thành viên tự viết cuối buổi một điều học được và một điều còn chưa chắc.

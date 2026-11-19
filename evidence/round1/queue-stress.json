@@ -1,0 +1,161 @@
+{
+  "assumption": "14 escalated tickets arrive together; one reviewer, 6 reviews/hour",
+  "max_wait_min": 130.0,
+  "stuck": 7,
+  "trials": [
+    {
+      "seed": 11,
+      "ticket_id": "LOAD-0",
+      "status": "escalated",
+      "arrive_min": 0,
+      "ledger": [],
+      "review_kind": "escalated",
+      "review_units": 1.0,
+      "queue_wait_min": 0.0,
+      "queue_stuck": false
+    },
+    {
+      "seed": 11,
+      "ticket_id": "LOAD-1",
+      "status": "escalated",
+      "arrive_min": 0,
+      "ledger": [],
+      "review_kind": "escalated",
+      "review_units": 1.0,
+      "queue_wait_min": 10.0,
+      "queue_stuck": false
+    },
+    {
+      "seed": 11,
+      "ticket_id": "LOAD-2",
+      "status": "escalated",
+      "arrive_min": 0,
+      "ledger": [],
+      "review_kind": "escalated",
+      "review_units": 1.0,
+      "queue_wait_min": 60.0,
+      "queue_stuck": false
+    },
+    {
+      "seed": 11,
+      "ticket_id": "LOAD-3",
+      "status": "escalated",
+      "arrive_min": 0,
+      "ledger": [],
+      "review_kind": "escalated",
+      "review_units": 1.0,
+      "queue_wait_min": 70.0,
+      "queue_stuck": true
+    },
+    {
+      "seed": 11,
+      "ticket_id": "LOAD-4",
+      "status": "escalated",
+      "arrive_min": 0,
+      "ledger": [],
+      "review_kind": "escalated",
+      "review_units": 1.0,
+      "queue_wait_min": 80.0,
+      "queue_stuck": true
+    },
+    {
+      "seed": 11,
+      "ticket_id": "LOAD-5",
+      "status": "escalated",
+      "arrive_min": 0,
+      "ledger": [],
+      "review_kind": "escalated",
+      "review_units": 1.0,
+      "queue_wait_min": 90.0,
+      "queue_stuck": true
+    },
+    {
+      "seed": 11,
+      "ticket_id": "LOAD-6",
+      "status": "escalated",
+      "arrive_min": 0,
+      "ledger": [],
+      "review_kind": "escalated",
+      "review_units": 1.0,
+      "queue_wait_min": 100.0,
+      "queue_stuck": true
+    },
+    {
+      "seed": 11,
+      "ticket_id": "LOAD-7",
+      "status": "escalated",
+      "arrive_min": 0,
+      "ledger": [],
+      "review_kind": "escalated",
+      "review_units": 1.0,
+      "queue_wait_min": 110.0,
+      "queue_stuck": true
+    },
+    {
+      "seed": 11,
+      "ticket_id": "LOAD-8",
+      "status": "escalated",
+      "arrive_min": 0,
+      "ledger": [],
+      "review_kind": "escalated",
+      "review_units": 1.0,
+      "queue_wait_min": 120.0,
+      "queue_stuck": true
+    },
+    {
+      "seed": 11,
+      "ticket_id": "LOAD-9",
+      "status": "escalated",
+      "arrive_min": 0,
+      "ledger": [],
+      "review_kind": "escalated",
+      "review_units": 1.0,
+      "queue_wait_min": 130.0,
+      "queue_stuck": true
+    },
+    {
+      "seed": 11,
+      "ticket_id": "LOAD-10",
+      "status": "escalated",
+      "arrive_min": 0,
+      "ledger": [],
+      "review_kind": "escalated",
+      "review_units": 1.0,
+      "queue_wait_min": 20.0,
+      "queue_stuck": false
+    },
+    {
+      "seed": 11,
+      "ticket_id": "LOAD-11",
+      "status": "escalated",
+      "arrive_min": 0,
+      "ledger": [],
+      "review_kind": "escalated",
+      "review_units": 1.0,
+      "queue_wait_min": 30.0,
+      "queue_stuck": false
+    },
+    {
+      "seed": 11,
+      "ticket_id": "LOAD-12",
+      "status": "escalated",
+      "arrive_min": 0,
+      "ledger": [],
+      "review_kind": "escalated",
+      "review_units": 1.0,
+      "queue_wait_min": 40.0,
+      "queue_stuck": false
+    },
+    {
+      "seed": 11,
+      "ticket_id": "LOAD-13",
+      "status": "escalated",
+      "arrive_min": 0,
+      "ledger": [],
+      "review_kind": "escalated",
+      "review_units": 1.0,
+      "queue_wait_min": 50.0,
+      "queue_stuck": false
+    }
+  ]
+}

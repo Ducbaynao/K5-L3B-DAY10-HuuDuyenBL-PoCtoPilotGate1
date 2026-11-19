@@ -7,18 +7,23 @@
     "roi_min": 0.25
   },
   "operations": {
-    "pic": "",
-    "approver_id": "",
+    "pic": "NV-TUNG",
+    "approver_id": "NV-HANH",
     "reviewers_on_shift": 1,
-    "review_capacity_per_hour": null,
-    "max_queue_wait_minutes": null,
-    "stop_conditions": [],
-    "alert_channel": "",
-    "decision_note": false,
-    "review_sampling_pct": 0
+    "review_capacity_per_hour": 6,
+    "max_queue_wait_minutes": 60,
+    "stop_conditions": [
+      "Có khoản hoàn sai: NV-TUNG tắt issue_refund liên quan trong tối đa 5 phút, NV-OANH đối soát.",
+      "Có lỗi hãng oan hoặc rò rỉ PII: NV-TUNG tắt file_carrier_fault hoặc notify_carrier liên quan trong tối đa 5 phút.",
+      "Có ca ùn hoặc dự báo chờ quá 60 phút: NV-HANH điều phối thủ công, NV-TUNG giảm tiếp nhận tự động.",
+      "Chi phí mỗi ticket trên 8000đ hoặc ROI dưới 0.25: chưa mở pilot, rà soát phạm vi và chi phí."
+    ],
+    "alert_channel": "ops-gate1 (kenh mo phong; can thiet lap va thu nhan canh bao truoc pilot that)",
+    "decision_note": true,
+    "review_sampling_pct": 10
   },
   "legal": {
-    "pii_fields_blocked_to_third_party": [],
-    "carrier_fault_requires_recorded_cause": false
+    "pii_fields_blocked_to_third_party": ["customer_note", "recipient_contact", "name", "phone", "street"],
+    "carrier_fault_requires_recorded_cause": true
   }
 }

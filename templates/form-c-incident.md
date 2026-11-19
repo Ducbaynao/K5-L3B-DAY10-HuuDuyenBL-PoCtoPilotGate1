@@ -2,7 +2,7 @@
 
 **Bàn:** K5-L3B-DAY10-HuuDuyenBL-PoCtoPilotGate1 · **Thẻ đã bốc:** ___ *(để trống tới phút 125; bốc số xong thì ghi đúng số đó, ví dụ `S3`. Lab Coach đối chiếu với sổ; lệnh tự kiểm tra in dòng này trong report.)*
 
-> Chưa được giao thẻ. Giữ nguyên phần trả lời để từng người tự thực hiện sau khi nhận đúng thẻ. Đức sẽ phụ trách phân tích kinh doanh/phạm vi, cùng nhóm chốt C12 sau khi có kết quả base/prepared/after; chưa thể hoàn tất v2. Các phần kỹ thuật, vận hành và pháp lý do Tấn, Đạt và Triết thực hiện theo TEAM.md.
+> Chưa được giao thẻ. Vòng1 đã chốt hash2a8b53bf, bộ nền prepared R-base-prepared-20261119-154346-28ecf0 đạt110/110. Giữ trống kết quả vòng2/phần riêng C3 cho tới khi nhận đúng thẻ. Trước sửa thêm phải chạy grade --incident Sx để đo base/prepared; sau đó mới phân tích, sửa và thêm monitor đặc thù. C12/v2 chờ bằng chứng thật; không dùng ticket bộ nền thay thẻ.
 
 Mở `incidents/Sx/card.md` của đúng số đã bốc. Các bước trên thẻ trỏ về đúng mục trong phiếu này. Mục C3 chỉ điền phần ứng với
 số thẻ của bàn; các phần khác để trống.

@@ -1,46 +1,47 @@
-# Bàn giao phần Sản phẩm và kinh doanh
+# Trạng thái kết thúc vòng 1, chờ thẻ sự cố
 
-Người phụ trách: Phạm Lý Ngoc Đức — 2A202603991.
+Đã chuẩn bị phần việc kỹ thuật và hồ sơ của bốn vai bằng Codex theo yêu cầu của Đức. Các thành viên cần tự đọc, hiểu và xác nhận; không coi nội dung được hỗ trợ là biên bản họp hay chữ ký của cá nhân.
 
-## Đã chuẩn bị để commit
+## Đã thực hiện
 
-- Phiếu A: câu 1.1, kết luận đề xuất câu 1.5 để nhóm rà soát, tiêu chí/hành động câu 1.6 và bằng chứng ký. Các ngưỡng đã ký giữ nguyên.
-- Phiếu B: bản đồ dữ liệu và drift (B3), lăng kính kinh doanh trong pre-mortem (B6), cổng kinh doanh và lý do (B7.4), tổng hợp baseline chờ kết quả prepared để chốt B8.
-- `config/operating_gates.json`: chỉ thay mục `business`; trần hoàn 1.500.000đ/ngày, ngân sách 8.000đ/ticket, ROI tối thiểu 0.25, phạm vi đánh giá all/100%.
-- `TEAM.md`: phân công và đóng góp thực tế của Đức; exit ticket để Đức tự viết cuối buổi.
+- `guards.py`: policy theo ngày, dự toán chi phí trước model; kiểm quyền lợi, bên trả, ledger, phê duyệt, trần hoàn; xác minh trách nhiệm từng kiện/hãng và payload gửi đi.
+- `operating_gates.json`: business/operations/legal đã điền. PIC NV-TUNG; approver NV-HANH; một người/6ca giờ, SLA60phút; decision_note=true, kiểm mẫu10%. Kênh alert đang mô phỏng, cần thiết lập/thử trước pilot thật.
+- Phiếu A/B có nội dung và bằng chứng vòng1; B8 đề xuất **Cải tiến thêm**, chờ nhóm xác nhận. Cá nhân tự viết exit ticket.
+- 18tests đạt: 13test công khai và 5test biên; hai ticket adhoc kiểm lời khai sai và PII trong đường gửi thật.
+- Snapshot vòng1 `2a8b53bf` chốt lúc `2026-11-19T15:43:46` theo giờ máy. Không chạy checkpoint lần nữa, không sửa guards_round1.py, operating_gates.round1.json, round1.lock.
 
-Các giá trị business đã được nhập; hiệu lực bảo vệ của guard chưa được kiểm chứng. Baseline có trước thay đổi này và không thay thế report after/prepared.
+## Bằng chứng
 
-## Các bạn tự thực hiện tiếp
+| Mốc | Mã lần chạy | pass_rate / pass_k | Hoàn sai / lỗi hãng oan / PII | Chi phí / ROI |
+|---|---|---|---|---|
+| base | R-base-before-20261119-145954-bde05c | 0.9909 / 0.9545 | 20000đ / 1 / 0 | 4203đ / 1.34 |
+| after cuối | R-base-after-20261119-154345-28ecf0 | 1 / 1 | 0 / 0 / 0 | 4456đ / 1.24 |
+| prepared | R-base-prepared-20261119-154346-28ecf0 | 1 / 1 | 0 / 0 / 0 | 4456đ / 1.24 |
 
-| Người | Phần phiếu cần tự điền | Code/config và bằng chứng cần làm |
-|---|---|---|
-| Tấn | Câu 1.3 phối hợp Đạt; B7.1–B7.2, phần kỹ thuật của B6; phân tích/sửa kỹ thuật Phiếu C khi có thẻ | Viết guard theo nguồn sự thật, không theo mã ticket; kiểm quyền lợi hoàn tiền, trách nhiệm hãng, dữ liệu gửi hãng và trần kinh doanh; cùng Đạt kiểm hồi quy |
-| Đạt | B0–B2, B7.3; nhật ký/bằng chứng và chỉ số theo dõi Phiếu C | Dùng baseline hiện có, chạy after/test/ticket hiểm; chốt checkpoint khi nhóm thống nhất, chạy prepared; sau khi nhận thẻ chạy grade trước sửa và sau sửa; thêm monitor cùng Tấn |
-| Triết | Câu 1.2/1.4; B4–B5, phần con người/pháp lý của B6, B7.5–B7.6; runbook/risk register Phiếu C | Tự điền operations/legal; nhận đúng thẻ được giao; điền submission.json và gom bài khi đủ thành phần |
-| Đức và cả nhóm | B8/v1 sau prepared; C12/v2 sau thẻ | Quyết định khớp tiêu chí, có bằng chứng thực; chưa đủ dữ liệu thì chưa chốt, không sửa tiêu chí để đạt |
+`evidence/round1/` chứa bản sao report/journal và output gate/test/adhoc/stress. `runs/` bị gitignore nên cần commit bản xuất để nhóm xem kết quả. Lần sửa gộp ghi đúng ở B0, không khẳng định đã đo riêng tác động từng gate.
 
-Phiếu C giữ nguyên phần trả lời để các thành viên tự làm vì nhóm chưa được giao thẻ. Không lấy thẻ khác hay dùng baseline thay bằng chứng sự cố.
+Stress14ca cần duyệt đến cùng lúc với1người/6ca giờ: chờ130phút,7ca ùn. Đây là thử riêng, không phải số production hay prepared; cần điều phối/dự phòng và diễn tập. Nhóm kho `?` còn chi phí10359đ/ticket dù tổng thể nền đạt.
 
-## Các điều kiện bàn giao cho kỹ sư
+## Khi được giao thẻ
 
-- Trần hoàn 1.500.000đ/ngày phải được kiểm trước lệnh ghi theo tổng hoàn tự động, không chỉ nhìn báo cáo sau chạy.
-- Giữ giới hạn Ops/Finance: 300.000đ/khách/ngày, ngân sách Finance 2.000.000đ/ngày và tiền LLM tối đa 1.500đ/ticket. Ngân sách 8.000đ của nhóm không cho phép vượt trần LLM 1.500đ.
-- Ngưỡng chi phí trong tiêu chí đã ký là tổng chi phí mỗi ticket theo report, gồm máy/người/giữ chỗ; đọc thêm ROI và từng kho. Không suy ROI sau đổi cấu hình từ baseline.
-- Chỉ điền cấu hình không bảo đảm guard đã thực thi. Tấn triển khai, Đạt kiểm thử, Triết xác nhận người/quy trình; cả nhóm kiểm tra trước checkpoint.
-- Không chạy checkpoint khi guards/operations/legal chưa hoàn tất; đây là mốc chốt một lần.
-- Không sửa `config/acceptance_criteria.json` hoặc `.lock`, không sửa snapshot vòng 1 sau khi tạo.
+1. Nhóm rà soát/chốt B8/v1 trước khi đọc thẻ; giữ tiêu chí và snapshot.
+2. Chỉ nhận đúng S1–S8 của Coach, ghi số đầu Phiếu C. Hiện chưa có thẻ.
+3. Đạt chạy `python -m lab10.grade --incident Sx` trước sửa để có base/prepared.
+4. Phân tích ít nhất2lỗi khác nguồn, điền C1–C6; Đức đọc kinh doanh/phạm vi cùng nhóm.
+5. Sửa guards.py/operating_gates.json hiện tại, thêm monitor phù hợp trong monitors.py; chạy nền/thẻ/grade. Không sửa snapshot.
+6. Điền C7–C12/v2, submission.json bằng số thật, tự viết exit ticket; chạy `python -m lab10.check_submission --collect` khi đủ thành phần.
 
-## Lưu phần bàn giao lên Git
+Chưa có monitor đặc thù, quyết định v2, ba dòng kết luận cuối hoặc PRD/eval card Lab9 để đối chiếu. Không tính các phần này là hoàn tất.
 
-Chạy từng dòng trong PowerShell, kiểm tra diff trước khi commit:
+## Lưu lên Git
+
+Chạy từng dòng PowerShell:
 
 ```powershell
 git diff --stat
-git diff -- config/operating_gates.json
-git add TEAM.md HANDOFF.md config/operating_gates.json templates/form-a-criteria.md templates/form-b-evaluation-gates.md templates/form-c-incident.md
-git commit -m "LAB 10: phan san pham va kinh doanh, ban giao nhom"
+git add .gitattributes TEAM.md HANDOFF.md config/operating_gates.json config/operating_gates.round1.json config/round1.lock lab10/guards.py lab10/guards_round1.py tests/test_round1_guards.py templates/form-a-criteria.md templates/form-b-evaluation-gates.md templates/form-c-incident.md submission/submission.json evidence/round1
+git commit -m "LAB 10: hoan thien vong 1, chot prepared"
 git push -u origin main
 ```
 
-Các thành viên chạy `git pull` khi cây làm việc của họ sạch; nếu đang có thay đổi riêng thì lưu/commit trước và xử lý xung đột theo nội dung, không ghi đè phần của nhau. Không chạy lại lệnh ký tiêu chí. Sau khi nhóm có kết quả prepared/thẻ, Đức còn phải quay lại tổng hợp và cùng nhóm chốt v1/v2.
+Không add lại/sửa tiêu chí đã ký. `.gitattributes` giữ file mẫu khóa ở LF đúng MANIFEST và nguyên byte snapshot. Mỗi thành viên pull sau khi lưu phần riêng, đọc lại phần mình để giải thích lúc demo. Codex chưa commit/push thay nhóm.
