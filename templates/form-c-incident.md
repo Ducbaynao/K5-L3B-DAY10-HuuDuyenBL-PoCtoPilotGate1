@@ -1,6 +1,8 @@
 # Phiếu C · Sự cố và quyết định v2 · Khối 3 (phút 125–200)
 
-**Bàn:** ______ · **Thẻ đã bốc:** ___ *(để trống tới phút 125; bốc số xong thì ghi đúng số đó, ví dụ `S3`. Lab Coach đối chiếu với sổ; lệnh tự kiểm tra in dòng này trong report.)*
+**Bàn:** K5-L3B-DAY10-HuuDuyenBL-PoCtoPilotGate1 · **Thẻ đã bốc:** ___ *(để trống tới phút 125; bốc số xong thì ghi đúng số đó, ví dụ `S3`. Lab Coach đối chiếu với sổ; lệnh tự kiểm tra in dòng này trong report.)*
+
+> Chưa được giao thẻ. Giữ nguyên phần trả lời để từng người tự thực hiện sau khi nhận đúng thẻ. Đức sẽ phụ trách phân tích kinh doanh/phạm vi, cùng nhóm chốt C12 sau khi có kết quả base/prepared/after; chưa thể hoàn tất v2. Các phần kỹ thuật, vận hành và pháp lý do Tấn, Đạt và Triết thực hiện theo TEAM.md.
 
 Mở `incidents/Sx/card.md` của đúng số đã bốc. Các bước trên thẻ trỏ về đúng mục trong phiếu này. Mục C3 chỉ điền phần ứng với
 số thẻ của bàn; các phần khác để trống.
