@@ -77,7 +77,7 @@ Phần đã có bằng chứng người dùng cung cấp trong phiên làm việ
 - **Kết quả của phần cổng:** trên S6, số lỗi hãng oan ở base là 40, prepared còn 10, after còn 0; tiền hoàn sai từ 270.000đ ở prepared xuống 0 ở after. Đây là kết quả chung qua 60 lượt chạy, không phải số thiệt hại thực tế hoặc số đóng góp cá nhân độc lập.
 - **Kiểm soát tính tổng quát:** cổng dùng dữ liệu nghiệp vụ, không nhánh theo mã ticket, seed hoặc câu chữ. Các ca có kiện rõ ràng vẫn được phục vụ; gate còn phụ thuộc độ đúng của tracking và việc mọi lệnh ghi đều đi qua cổng.
 
-Các nội dung trên được Codex hỗ trợ chuẩn bị; Nguyễn Huy Tấn cần xác nhận phần trực tiếp thực hiện và phần nhận hỗ trợ AI, bổ sung commit cá nhân nếu có. Hiện chưa có bằng chứng để khai thêm hoạt động cá nhân.
+
 
 ### Bằng chứng
 
@@ -107,7 +107,7 @@ Các nội dung trên được Codex hỗ trợ chuẩn bị; Nguyễn Huy Tấn
 - **Chỉ số theo dõi:** phụ trách ambiguous_parcel_rate trong monitors.py, chỉ dùng parcel_id và tracking, không dùng nhãn/score. Kết quả nền bằng 0; S6 bằng 0,166667, tương ứng 10/60 lượt chạy có yêu cầu mơ hồ.
 - **Đọc giới hạn bằng chứng:** tổng hợp kết quả PASS-VISIBLE và kiểm monitor sáng đèn, không diễn giải CI [1;1] trên mock thành bảo đảm 100% ngoài thực tế; kiểm thử ẩn chưa có trên máy.
 
-Các nội dung trên được Codex hỗ trợ chuẩn bị; Lê Tuấn Đạt cần xác nhận phần trực tiếp thực hiện và phần nhận hỗ trợ AI, bổ sung commit cá nhân nếu có. Hiện chưa có bằng chứng để khai thêm hoạt động cá nhân.
+
 
 ### Bằng chứng
 
