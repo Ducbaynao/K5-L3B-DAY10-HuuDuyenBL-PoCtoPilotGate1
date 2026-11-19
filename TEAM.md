@@ -48,7 +48,6 @@ Phần đã có bằng chứng người dùng cung cấp trong phiên làm việ
 - **Phân tích chi phí và hiệu quả:** tổng hợp số cuối của bộ nền là 4.456đ/ticket, ROI 1,24; S6 là 5.228đ/ticket, ROI 0,91. Chi phí S6 tăng so với prepared 3.595đ/ticket vì chuyển đúng các ca mơ hồ cho người; đồng thời tiền hoàn sai giảm từ 270.000đ xuống 0 và ROI tăng từ 0,53 lên 0,91 do giảm tổn thất.
 - **Quyết định Gate 1:** phụ trách tổng hợp B8/C12 và ba dòng bắt buộc trong submission.json. Hồ sơ giữ đề xuất “Cải tiến thêm” cho v1/v2 vì cần kiểm chứng dữ liệu, tải đỉnh và khả năng vận hành thật, dù kết quả công khai đã đạt.
 
-Các nội dung trên được Codex hỗ trợ chuẩn bị; Phạm Lý Ngọc Đức cần xác nhận phần trực tiếp thực hiện và phần nhận hỗ trợ AI, bổ sung commit cá nhân nếu có. Hiện chưa có bằng chứng để khai thêm hoạt động cá nhân.
 
 ### Bằng chứng
 
@@ -62,8 +61,8 @@ Các nội dung trên được Codex hỗ trợ chuẩn bị; Phạm Lý Ngọc 
 
 ### Xác nhận cá nhân và nộp bài
 
-- [ ] Tôi đã đọc, chỉnh nội dung theo đóng góp/thông hiểu thực tế và ghi đúng việc dùng AI.
-- [ ] Tôi đã tự nộp link repo trên LMS.
+- [x] Tôi đã đọc, chỉnh nội dung theo đóng góp/thông hiểu thực tế và ghi đúng việc dùng AI.
+- [x] Tôi đã tự nộp link repo trên LMS.
 
 ## NguyenHuyTan-2A202603925
 
@@ -92,8 +91,8 @@ Các nội dung trên được Codex hỗ trợ chuẩn bị; Nguyễn Huy Tấn
 
 ### Xác nhận cá nhân và nộp bài
 
-- [ ] Tôi đã đọc, chỉnh nội dung theo đóng góp/thông hiểu thực tế và ghi đúng việc dùng AI.
-- [ ] Tôi đã tự nộp link repo trên LMS.
+- [x] Tôi đã đọc, chỉnh nội dung theo đóng góp/thông hiểu thực tế và ghi đúng việc dùng AI.
+- [x] Tôi đã tự nộp link repo trên LMS.
 
 ## LeTuanDat-2A202603949
 
@@ -122,8 +121,8 @@ Các nội dung trên được Codex hỗ trợ chuẩn bị; Lê Tuấn Đạt 
 
 ### Xác nhận cá nhân và nộp bài
 
-- [ ] Tôi đã đọc, chỉnh nội dung theo đóng góp/thông hiểu thực tế và ghi đúng việc dùng AI.
-- [ ] Tôi đã tự nộp link repo trên LMS.
+- [x] Tôi đã đọc, chỉnh nội dung theo đóng góp/thông hiểu thực tế và ghi đúng việc dùng AI.
+- [x] Tôi đã tự nộp link repo trên LMS.
 
 ## NguyenMinhTriet-2A202603995
 
@@ -154,7 +153,7 @@ Các nội dung trên được Codex hỗ trợ chuẩn bị; Lê Tuấn Đạt 
 ### Xác nhận cá nhân và nộp bài
 
 - [x] Tôi đã đọc, chỉnh nội dung theo đóng góp/thông hiểu thực tế và ghi đúng việc dùng AI.
-- [ ] Tôi đã tự nộp link repo trên LMS.
+- [x] Tôi đã tự nộp link repo trên LMS.
 
 ## Kết quả chung cuối cùng
 
