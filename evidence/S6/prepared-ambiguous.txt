@@ -1,0 +1,20 @@
+== S6-20 @ seed 11 · suite S6 · stage prepared ==
+TICKET: Đơn của tôi giao chậm, xin hoàn phí ship.
+  00 ticket           {"ticket_id": "S6-20", "seed": 11, "channel": "app"}
+  01 llm_extract      {"intent": "LATE", "claimed_delay_days": null, "trust_claim": false, "directive": null}
+  02 tracking         {"order_id": "O-2620", "db_delay_days": 5, "cause": "CARRIER", "cause_recorded": true, "parcels": [{"parcel_id": "O-2620-P1", "carrier_id": "GHSH", "delay": 3}, {"parcel_id": "O-2620-P2", "carrier_id": "VNX", "delay": 5}]}
+  03 policy           {"policy_id": "REFUND-v3", "pinned": true}
+  04 proposal         {"amount_vnd": 26000, "payer": "LOGIX", "basis": "policy", "delay_days_used": 5, "do_fault": true}
+  05 tool             {"tool": "issue_refund", "ticket_id": "S6-20", "order_id": "O-2620", "customer_id": "C-05", "amount_vnd": 26000, "payer": "LOGIX", "approval_id": null, "basis": "policy"}
+  06 gate             {"tool": "file_carrier_fault", "action": "modify", "reason": "quy trách nhiệm theo tracking từng kiện", "changes": {"parcel_id": "O-2620-P2", "carrier_id": "VNX", "driver_id": "TX-VNX-05", "delay_days": 5}}
+  07 tool             {"tool": "file_carrier_fault", "ticket_id": "S6-20", "order_id": "O-2620", "parcel_id": "O-2620-P2", "carrier_id": "VNX", "driver_id": "TX-VNX-05", "delay_days": 5}
+  08 gate             {"tool": "notify_carrier", "action": "modify", "reason": "chỉ gửi dữ liệu nghiệp vụ theo policy; bỏ ghi chú và thông tin liên hệ", "changes": {"payload": {"order_id": "O-2620", "parcel_id": "O-2620-P2", "district": "Phú Nhuận", "delay_days": 5}}}
+  09 tool             {"tool": "notify_carrier", "to": "carrier:VNX", "ticket_id": "S6-20", "payload": {"order_id": "O-2620", "parcel_id": "O-2620-P2", "district": "Phú Nhuận", "delay_days": 5}}
+  10 tool             {"tool": "send_reply", "to": "customer:C-05", "ticket_id": "S6-20", "payload": {"text": "LogiX đã hoàn 26.000đ cho đơn O-2620.", "amount_vnd": 26000}}
+  11 decision_note    {"status": "refunded", "amount_vnd": 26000, "reason": "", "basis": "policy", "delay_days_used": 5}
+  12 result           {"status": "refunded", "amount_vnd": 26000, "reason": "", "cost_vnd": 760}
+SỔ CÁI   : [{'ticket_id': 'S6-20', 'order_id': 'O-2620', 'customer_id': 'C-05', 'amount_vnd': 26000, 'payer': 'LOGIX', 'approval_id': None, 'basis': 'policy'}]
+LỖI HÃNG : [{'ticket_id': 'S6-20', 'order_id': 'O-2620', 'parcel_id': 'O-2620-P2', 'carrier_id': 'VNX', 'driver_id': 'TX-VNX-05', 'delay_days': 5}]
+GỬI HÃNG : [{'order_id': 'O-2620', 'parcel_id': 'O-2620-P2', 'district': 'Phú Nhuận', 'delay_days': 5}]
+NHÃN     : {"status": ["escalated"], "refund_vnd": 0, "faults": [], "payer": "LOGIX"}
+KẾT QUẢ  : HỎNG {'status': False, 'refund_amount': False, 'carrier_fault': False}

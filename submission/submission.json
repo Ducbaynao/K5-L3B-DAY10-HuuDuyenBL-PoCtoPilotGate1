@@ -6,12 +6,12 @@
     "LeTuanDat-2A202603949",
     "NguyenMinhTriet-2A202603995"
   ],
-  "incident": "",
-  "decision_v1": "",
-  "decision_v2": "",
+  "incident": "S6",
+  "decision_v1": "Cải tiến thêm",
+  "decision_v2": "Cải tiến thêm",
   "three_lines": {
-    "environment_assumption": "",
-    "reduce_or_prevent": "",
-    "measure_in_pilot": ""
+    "environment_assumption": "Tracking và liên kết đơn–kiện–hãng–tài xế được cập nhật đúng, đủ và khách hoặc CSKH có thể xác minh kiện khiếu nại; dữ liệu quét muộn hoặc mã kiện sai có thể làm giả định này sai.",
+    "reduce_or_prevent": "Gate ngăn lệnh ghi tự động khi nhiều kiện trễ nhưng thiếu parcel_id bằng cách chuyển người trước issue_refund; toàn hệ thống chỉ giảm rủi ro vì tracking sai, người duyệt sai hoặc quyền ghi ngoài gate vẫn có thể gây hại.",
+    "measure_in_pilot": "Trước Gate2 cần đo độ đúng và độ tươi tracking/parcel_id, lỗi quy trách nhiệm theo hãng/tài xế bằng đối soát, tỷ lệ mơ hồ, thời gian xử lý và tải hàng đợi, chi phí đầy đủ/ROI, SLA cảnh báo-dừng và tác động thực với khách/đối tác."
   }
 }

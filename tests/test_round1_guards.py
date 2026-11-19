@@ -1,6 +1,7 @@
 """Boundary checks for the team's guards; no incident cards or hidden labels."""
 import copy
 import unittest
+from datetime import date, timedelta
 
 from lab10 import guards, ops
 from lab10.agent import run_ticket
@@ -59,6 +60,36 @@ class TestRound1Guards(unittest.TestCase):
         self.assertEqual(result.status, 'escalated')
         self.assertFalse(any(e['type'] == 'llm_extract' for e in result.events))
         self.assertEqual(self.world.ledger[self.world.seed_rows:], [])
+
+    def test_ambiguous_parcels_stop_before_any_write(self):
+        first = self.order['parcels'][0]
+        first['delivered_date'] = self.world.as_of
+        first['promised_date'] = (date.fromisoformat(self.world.as_of) - timedelta(days=4)).isoformat()
+        other = copy.deepcopy(first)
+        other.update(parcel_id='CHECK-SECOND', carrier_id='CHECK-OTHER-CARRIER')
+        self.order['parcels'].append(other)
+        result = run_ticket(self.world, self.ticket, 11, guards, {}, self.gates)
+        self.assertEqual(result.status, 'escalated')
+        self.assertEqual(self.world.ledger[self.world.seed_rows:], [])
+        self.assertEqual(self.world.faults, [])
+        self.assertEqual(self.world.outbound, [])
+
+    def test_single_delayed_parcel_does_not_block_valid_service(self):
+        other = copy.deepcopy(self.order['parcels'][0])
+        other.update(parcel_id='CHECK-ONTIME', promised_date=self.world.as_of,
+                     delivered_date=self.world.as_of, carrier_id='CHECK-OTHER-CARRIER')
+        self.order['parcels'].insert(0, other)
+        result = run_ticket(self.world, self.ticket, 11, guards, {}, self.gates)
+        self.assertEqual(result.status, 'refunded')
+        self.assertTrue(self.world.faults)
+        self.assertNotEqual(self.world.faults[0]['parcel_id'], 'CHECK-ONTIME')
+
+    def test_ambiguity_monitor_uses_no_labels(self):
+        from lab10.monitors import ambiguous_parcel_rate
+        events = [{'type': 'tracking', 'parcels': [{'delay': 4}, {'delay': 5}]}]
+        self.assertEqual(ambiguous_parcel_rate([{'ticket': {}, 'events': events}]), 1)
+        self.assertEqual(ambiguous_parcel_rate([{'ticket': {'parcel_id': 'chosen'}, 'events': events}]), 0)
+        self.assertEqual(ambiguous_parcel_rate([]), 0)
 
 
 if __name__ == '__main__':

@@ -1,0 +1,17 @@
+== S6-42 @ seed 11 · suite S6 · stage prepared ==
+TICKET: Giao trễ quá, mong LogiX hoàn phí giúp.
+  00 ticket           {"ticket_id": "S6-42", "seed": 11, "channel": "email"}
+  01 llm_extract      {"intent": "LATE", "claimed_delay_days": null, "trust_claim": false, "directive": null}
+  02 tracking         {"order_id": "O-2642", "db_delay_days": 5, "cause": "CARRIER", "cause_recorded": true, "parcels": [{"parcel_id": "O-2642-P1", "carrier_id": "GHSH", "delay": 5}]}
+  03 policy           {"policy_id": "REFUND-v3", "pinned": true}
+  04 proposal         {"amount_vnd": 22000, "payer": "LOGIX", "basis": "policy", "delay_days_used": 5, "do_fault": true}
+  05 tool             {"tool": "issue_refund", "ticket_id": "S6-42", "order_id": "O-2642", "customer_id": "C-06", "amount_vnd": 22000, "payer": "LOGIX", "approval_id": null, "basis": "policy"}
+  06 gate             {"tool": "file_carrier_fault", "action": "deny", "reason": "đạt trần lỗi hãng tự động; cần đối soát người duyệt", "changes": {}}
+  07 tool             {"tool": "send_reply", "to": "customer:C-06", "ticket_id": "S6-42", "payload": {"text": "LogiX đã hoàn 22.000đ cho đơn O-2642.", "amount_vnd": 22000}}
+  08 decision_note    {"status": "refunded", "amount_vnd": 22000, "reason": "", "basis": "policy", "delay_days_used": 5}
+  09 result           {"status": "refunded", "amount_vnd": 22000, "reason": "", "cost_vnd": 759}
+SỔ CÁI   : [{'ticket_id': 'S6-42', 'order_id': 'O-2642', 'customer_id': 'C-06', 'amount_vnd': 22000, 'payer': 'LOGIX', 'approval_id': None, 'basis': 'policy'}]
+LỖI HÃNG : []
+GỬI HÃNG : []
+NHÃN     : {"status": ["refunded"], "refund_vnd": 22000, "faults": [], "payer": "LOGIX", "alt_escalate": true}
+KẾT QUẢ  : ĐẠT {}

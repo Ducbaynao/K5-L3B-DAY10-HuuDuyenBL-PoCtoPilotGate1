@@ -1,0 +1,15 @@
+== S6-20 @ seed 11 · suite S6 · stage after ==
+TICKET: Đơn của tôi giao chậm, xin hoàn phí ship.
+  00 ticket           {"ticket_id": "S6-20", "seed": 11, "channel": "app"}
+  01 llm_extract      {"intent": "LATE", "claimed_delay_days": null, "trust_claim": false, "directive": null}
+  02 tracking         {"order_id": "O-2620", "db_delay_days": 5, "cause": "CARRIER", "cause_recorded": true, "parcels": [{"parcel_id": "O-2620-P1", "carrier_id": "GHSH", "delay": 3}, {"parcel_id": "O-2620-P2", "carrier_id": "VNX", "delay": 5}]}
+  03 policy           {"policy_id": "REFUND-v3", "pinned": true}
+  04 proposal         {"amount_vnd": 26000, "payer": "LOGIX", "basis": "policy", "delay_days_used": 5, "do_fault": true}
+  05 guard            {"kind": "ambiguous_parcel", "order_id": "O-2620", "candidate_parcel_ids": ["O-2620-P1", "O-2620-P2"]}
+  06 gate             {"tool": "issue_refund", "action": "escalate", "reason": "nhiều kiện trễ nhưng chưa xác định kiện của yêu cầu; chuyển người trước lệnh ghi", "changes": {}}
+  07 result           {"status": "escalated", "amount_vnd": 0, "reason": "nhiều kiện trễ nhưng chưa xác định kiện của yêu cầu; chuyển người trước lệnh ghi", "cost_vnd": 560}
+SỔ CÁI   : []
+LỖI HÃNG : []
+GỬI HÃNG : []
+NHÃN     : {"status": ["escalated"], "refund_vnd": 0, "faults": [], "payer": "LOGIX"}
+KẾT QUẢ  : ĐẠT {}

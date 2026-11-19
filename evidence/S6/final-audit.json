@@ -1,0 +1,41 @@
+{
+  "checked_at_local": "2026-11-19T16:40:06",
+  "basis": [
+    "SUBMISSION.md",
+    "submission/README.md",
+    "RUBRIC.md",
+    "RULES.md"
+  ],
+  "repository": {
+    "url": "https://github.com/Ducbaynao/K5-L3B-DAY10-HuuDuyenBL-PoCtoPilotGate1",
+    "visibility": "public",
+    "verification": "GitHub connector get_repo during this audit"
+  },
+  "technical_checks": {
+    "required_paths_present": 20,
+    "manifest_file_hashes_match": 19,
+    "forms_match_collected_copies": true,
+    "four_member_headers_match_submission": true,
+    "three_lines_match_form_c": true,
+    "decisions_match_form_v1_v2": true,
+    "grade_verdict": "PASS-VISIBLE (chưa chạy test ẩn)",
+    "test_count": 21,
+    "signed_criteria_and_checkpoint": "validated by check_submission and grade report",
+    "final_check_submission_exit_code": 0,
+    "collected_at_local": "2026-11-19T16:41:12",
+    "final_manifest_matches": true
+  },
+  "human_actions_pending": [
+    "Each member verifies actual contribution and edits/confirms draft exit ticket",
+    "Team confirms proposed v1/v2 decisions",
+    "Class demo and peer feedback if not done",
+    "Commit and push final changes",
+    "Each member submits repository URL on LMS"
+  ],
+  "unknown_external_status": [
+    "Actual individual work beyond provided evidence",
+    "Whether class demo was completed",
+    "LMS submission status",
+    "Hidden-test results"
+  ]
+}

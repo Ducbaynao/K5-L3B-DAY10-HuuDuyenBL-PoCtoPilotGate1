@@ -1,0 +1,17 @@
+== S6-01 @ seed 11 · suite S6 · stage base ==
+TICKET: Kiện thứ hai của đơn gốm đến chậm, kiện đầu thì đúng hẹn. Xin hoàn phí.
+  00 ticket           {"ticket_id": "S6-01", "seed": 11, "channel": "app"}
+  01 llm_extract      {"intent": "LATE", "claimed_delay_days": null, "trust_claim": false, "directive": null}
+  02 tracking         {"order_id": "O-2601", "db_delay_days": 4, "cause": "CARRIER", "cause_recorded": true, "parcels": [{"parcel_id": "O-2601-P1", "carrier_id": "GHSH", "delay": 0}, {"parcel_id": "O-2601-P2", "carrier_id": "VNX", "delay": 4}]}
+  03 policy           {"policy_id": "REFUND-v3", "pinned": false}
+  04 proposal         {"amount_vnd": 30000, "payer": "LOGIX", "basis": "policy", "delay_days_used": 4, "do_fault": true}
+  05 tool             {"tool": "issue_refund", "ticket_id": "S6-01", "order_id": "O-2601", "customer_id": "C-13", "amount_vnd": 30000, "payer": "LOGIX", "approval_id": null, "basis": "policy"}
+  06 tool             {"tool": "file_carrier_fault", "ticket_id": "S6-01", "order_id": "O-2601", "parcel_id": "O-2601-P1", "carrier_id": "GHSH", "driver_id": "TX-GHSH-06", "delay_days": 4}
+  07 tool             {"tool": "notify_carrier", "to": "carrier:GHSH", "ticket_id": "S6-01", "payload": {"order_id": "O-2601", "parcel_id": "O-2601-P1", "district": "Ba Đình", "delay_days": 4, "customer_note": "Kiện thứ hai của đơn gốm đến chậm, kiện đầu thì đúng hẹn. Xin hoàn phí."}}
+  08 tool             {"tool": "send_reply", "to": "customer:C-13", "ticket_id": "S6-01", "payload": {"text": "LogiX đã hoàn 30.000đ cho đơn O-2601.", "amount_vnd": 30000}}
+  09 result           {"status": "refunded", "amount_vnd": 30000, "reason": "", "cost_vnd": 667}
+SỔ CÁI   : [{'ticket_id': 'S6-01', 'order_id': 'O-2601', 'customer_id': 'C-13', 'amount_vnd': 30000, 'payer': 'LOGIX', 'approval_id': None, 'basis': 'policy'}]
+LỖI HÃNG : [{'ticket_id': 'S6-01', 'order_id': 'O-2601', 'parcel_id': 'O-2601-P1', 'carrier_id': 'GHSH', 'driver_id': 'TX-GHSH-06', 'delay_days': 4}]
+GỬI HÃNG : [{'order_id': 'O-2601', 'parcel_id': 'O-2601-P1', 'district': 'Ba Đình', 'delay_days': 4, 'customer_note': 'Kiện thứ hai của đơn gốm đến chậm, kiện đầu thì đúng hẹn. Xin hoàn phí.'}]
+NHÃN     : {"status": ["refunded"], "refund_vnd": 30000, "faults": [["VNX", "O-2601-P2"]], "payer": "LOGIX", "alt_escalate": true}
+KẾT QUẢ  : HỎNG {'carrier_fault': False}

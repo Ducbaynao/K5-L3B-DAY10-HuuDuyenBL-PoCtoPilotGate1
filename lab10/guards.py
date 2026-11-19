@@ -78,6 +78,12 @@ def write_gate(ctx, action):
         if ctx.ticket.get('parcel_id') and not any(
                 p['parcel_id'] == ctx.ticket['parcel_id'] for p in order['parcels']):
             return Verdict.escalate('kiện không thuộc đơn')
+        if not ctx.ticket.get('parcel_id'):
+            delayed = [p for p in order['parcels'] if H.db_delay_days(p, ctx.as_of) > 0]
+            if len(delayed) > 1:
+                ctx.log('ambiguous_parcel', order_id=order['order_id'],
+                        candidate_parcel_ids=[p['parcel_id'] for p in delayed])
+                return Verdict.escalate('nhiều kiện trễ nhưng chưa xác định kiện của yêu cầu; chuyển người trước lệnh ghi')
         parcel = H.ticket_parcel(order, ctx.ticket, ctx.as_of)
         delay = H.db_delay_days(parcel, ctx.as_of)
         entitlement = H.entitlement_vnd(policy, order, delay, parcel.get('delay_cause'))

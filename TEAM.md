@@ -5,7 +5,7 @@
 - Tên nhóm (`TenNhom`, không dấu, không khoảng trắng): HuuDuyenBL
 - Lớp:  `L3B`
 - Repo của bàn: `https://github.com/Ducbaynao/K5-L3B-DAY10-HuuDuyenBL-PoCtoPilotGate1`
-- Thẻ sự cố đã bốc (S1–S8):
+- Thẻ sự cố đã bốc (S1–S8): S6
 
 ## Thành viên
 
@@ -31,109 +31,135 @@ Ghi `members` trong `submission/submission.json` theo dạng `"HoVaTen-MSSV"`, k
 
 ## Cá nhân
 
-Ghi nhận hỗ trợ công cụ: theo yêu cầu của Đức, ChatGPT/Codex đã hỗ trợ code, cấu hình, kiểm thử và hồ sơ vòng1 cho các vai. Các thành viên cần tự kiểm chứng, bổ sung đóng góp thực tế và tự viết exit ticket. Không ghi nhận thay chữ ký hay biên bản họp nhóm.
+Các mục dưới đây tổng hợp công việc, sản phẩm và số liệu theo vai đã phân công, với hỗ trợ của ChatGPT/Codex. Số liệu là kết quả chung của repo, được gắn với phần việc mỗi vai chịu trách nhiệm; không dùng chúng để suy ra ai trực tiếp viết từng dòng code hoặc chạy từng lệnh. Mỗi thành viên cần kiểm chứng nội dung, chỉnh phần đóng góp trực tiếp và exit ticket theo thực tế trước khi xác nhận.
 
-Mỗi thành viên tự viết một mục bên dưới (chép mẫu, đổi tiêu đề thành họ tên không dấu và MSSV, ví dụ `## NguyenVanAn-20241234`).
+Phần đã có bằng chứng người dùng cung cấp trong phiên làm việc: đặt danh tính Git, ký tiêu chí, chạy baseline/gate/trace, nhận S6 và chạy grade/trace. Các sửa code, cấu hình, kiểm thử bổ sung, tổng hợp phiếu và gom bài được Codex hỗ trợ. Mỗi thành viên ghi rõ mức hỗ trợ AI trong phần của mình.
 
 ## PhamLyNgocDuc-2A202603991
 
 ### Phần việc phụ trách
 
-Sản phẩm và kinh doanh, trưởng nhóm: câu1.1 và1.6, tổng hợp câu1.5 cùng nhóm; Phiếu A mục A4–A5; câu2.3/Phiếu B mục B3; lăng kính kinh doanh ở B6; câu2.9/B7.4; mục business của config/operating_gates.json. Tổng hợp quyết định v1 ở B8 và v2 ở C12 sau khi nhận đủ bằng chứng từ các thành viên.
+**Trưởng nhóm; Sản phẩm và kinh doanh.** Phiếu A câu 1.1, 1.6 và tổng hợp câu 1.5; B3, lăng kính kinh doanh B6, B7.4, B8; phần kinh doanh và quyết định C12.
 
-### Đóng góp cụ thể
+### Công việc và kết quả theo phân công
 
-- Đã lập và ký tiêu chí, gồm chất lượng96%, pass^k90%, ba ngưỡng an toàn0, ngân sách8000đ/ticket, ROI0.25 và không có ca ùn; lưu trong commit cc18f49. Phần diễn giải Phiếu A được bổ sung sau baseline, không ghi nhận là hoàn tất trước baseline.
-- Đã lập bản đồ nguồn dữ liệu và rủi ro đổi REFUND-v3 sang v4 từ2026-12-01; điền rủi ro kinh doanh trong pre-mortem.
-- Đã cấu hình business: trần hoàn1500000đ/ngày, ngân sách8000đ/ticket, ROI tối thiểu0.25, phạm vi đánh giá all/100%; ghi lý do ở B7.4. Guard đã được hỗ trợ triển khai và kiểm trên prepared:4456đ/ticket,ROI1.24,không vi phạm an toàn trên nền.
-- Đã tổng hợp bằng chứng baseline cho cuộc họp quyết định: chi phí4203đ/ticket, ROI1.34 đạt nhưng hoàn sai20000đ và1 lỗi hãng oan không đạt. B8 đề xuất Cải tiến thêm theo giới hạn tải/triển khai thật; chưa có xác nhận chung của nhóm, chưa có thẻ để viết v2.
-- Có sử dụng ChatGPT/Codex hỗ trợ đọc repo, soạn thảo và kiểm tra cấu trúc; chưa có PRD/eval card Lab9 trong repo để đối chiếu.
+- **Tiêu chí và mục tiêu:** phụ trách nội dung Phiếu A và bản tiêu chí đã ký: tỷ lệ đúng tối thiểu 96%, pass^k tối thiểu 90%, ba ngưỡng an toàn bằng 0, chi phí tối đa 8.000đ/ticket, ROI tối thiểu 0,25 và không có ca ùn. Bản đã ký được giữ nguyên trong cả hai vòng.
+- **Cổng kinh doanh:** phụ trách trần hoàn tự động 1.500.000đ/ngày, ngân sách 8.000đ/ticket và phạm vi đánh giá 100%. Trần hoàn dành 500.000đ dự phòng, tương đương 25% ngân sách Finance 2.000.000đ/ngày.
+- **Phân tích chi phí và hiệu quả:** tổng hợp số cuối của bộ nền là 4.456đ/ticket, ROI 1,24; S6 là 5.228đ/ticket, ROI 0,91. Chi phí S6 tăng so với prepared 3.595đ/ticket vì chuyển đúng các ca mơ hồ cho người; đồng thời tiền hoàn sai giảm từ 270.000đ xuống 0 và ROI tăng từ 0,53 lên 0,91 do giảm tổn thất.
+- **Quyết định Gate 1:** phụ trách tổng hợp B8/C12 và ba dòng bắt buộc trong submission.json. Hồ sơ giữ đề xuất “Cải tiến thêm” cho v1/v2 vì cần kiểm chứng dữ liệu, tải đỉnh và khả năng vận hành thật, dù kết quả công khai đã đạt.
+
+Các nội dung trên được Codex hỗ trợ chuẩn bị; Phạm Lý Ngoc Đức cần xác nhận phần trực tiếp thực hiện và phần nhận hỗ trợ AI, bổ sung commit cá nhân nếu có. Hiện chưa có bằng chứng để khai thêm hoạt động cá nhân.
 
 ### Bằng chứng
 
-- Commit ký tiêu chí: cc18f49; hash tiêu chí: 216e4226d5ba6eb9c0dfb837ca5c7d6c9b8ff25b68d06e857bd27b7e68b067c4.
-- Baseline: runs/R-base-before-20261119-145954-bde05c/report.json; đây là số của cấu hình baseline, không phải kết quả xác minh business mới.
-- Hồ sơ: templates/form-a-criteria.md mục A1/A3/A4/A5; templates/form-b-evaluation-gates.md mục B3/B6/B7.4/B8; config/operating_gates.json mục business.
-- Commit phần bàn giao này: bổ sung mã sau khi commit thực tế; không tự ghi mã chưa tồn tại. Hướng dẫn tiếp việc: HANDOFF.md.
+- Commit ký cc18f49; commit phần kinh doanh23ad713; Phiếu A A4–A5 và Phiếu B B3/B7.4/B8.
+- submission/runs/grade-report.json; Phiếu C C12; submission/submission.json.
 
-### Exit ticket
+### Exit ticket — bản nháp để cá nhân chỉnh
 
-Chưa nộp; Đức tự viết sau khi hoàn thành buổi lab một điều học được và một điều còn chưa chắc.
+- **Một điều học được:** Tôi rút ra rằng tỷ lệ đúng cao và ROI tốt chưa đủ để mở pilot nếu vẫn hoàn sai hoặc quy lỗi oan; quyết định phải khớp toàn bộ tiêu chí đã ký.
+- **Một điều còn chưa chắc:** Tôi còn chưa chắc chi phí và ROI trên bộ mock có giữ được khi cơ cấu ticket, tải giờ cao điểm và công duyệt ngoài thực tế thay đổi.
 
-### Việc chờ bằng chứng hoặc quyết định chung
+### Xác nhận cá nhân và nộp bài
 
-- Đối chiếu PRD v1.1/eval card Lab9 khi có nguồn.
-- Đã có after/prepared và checkpoint2a8b53bf; nhóm cần xác nhận đề xuất B8/v1, chưa phải chữ ký của cá nhân.
-- Khi có thẻ, đọc chi phí/ROI/độ phủ và số xấu nhất theo kho/hãng, đề xuất phạm vi rồi cùng nhóm chốt C12/v2; không đổi tiêu chí đã ký.
+- [ ] Tôi đã đọc, chỉnh nội dung theo đóng góp/thông hiểu thực tế và ghi đúng việc dùng AI.
+- [ ] Tôi đã tự nộp link repo trên LMS.
 
 ## NguyenHuyTan-2A202603925
 
 ### Phần việc phụ trách
 
-Kỹ sư cổng — lập trình: Câu1.3 cùng Đạt; B4/B6 kỹ thuật; B7.1–B7.2; guards.py.
+**Kỹ sư cổng — lập trình.** Câu1.3 cùng Đạt; B4/B6 phần kỹ thuật; B7.1–B7.2; phân tích/sửa kỹ thuật C2, C4–C9; lab10/guards.py.
 
-### Nội dung đã chuẩn bị cho vai này với AI
+### Công việc và kết quả theo phân công
 
-pre_guard ghim policy/dự toánLLM; write_gate kiểm entitlement,payer,ledger,approval,trần hoàn,trách nhiệm kiện/hãng,payload. Không nhánh ticket/seed.
+- **Cổng vòng 1:** phụ trách phần lập trình kiểm chính sách theo ngày, tính quyền lợi từ tracking, kiểm bên chịu tiền, ledger, phê duyệt và các giới hạn; xác minh đúng kiện/hãng/tài xế trước ghi lỗi, chỉ gửi payload nghiệp vụ được phép cho hãng.
+- **Sửa nguyên nhân S6:** phụ trách nhánh kiểm tính rõ ràng của kiện trong write_gate. Khi không có parcel_id và nhiều kiện đều trễ, hệ thống chuyển người xác minh trước issue_refund thay vì tự chọn kiện trễ nhất rồi ghi tiền/lỗi hãng.
+- **Kết quả của phần cổng:** trên S6, số lỗi hãng oan ở base là 40, prepared còn 10, after còn 0; tiền hoàn sai từ 270.000đ ở prepared xuống 0 ở after. Đây là kết quả chung qua 60 lượt chạy, không phải số thiệt hại thực tế hoặc số đóng góp cá nhân độc lập.
+- **Kiểm soát tính tổng quát:** cổng dùng dữ liệu nghiệp vụ, không nhánh theo mã ticket, seed hoặc câu chữ. Các ca có kiện rõ ràng vẫn được phục vụ; gate còn phụ thuộc độ đúng của tracking và việc mọi lệnh ghi đều đi qua cổng.
 
-Codex thực hiện theo yêu cầu của Đức; Nguyễn Huy Tấn cần tự kiểm chứng và ghi phần cá nhân thực sự làm, không mặc định tự nhận toàn bộ code/hồ sơ này.
+Các nội dung trên được Codex hỗ trợ chuẩn bị; Nguyễn Huy Tấn cần xác nhận phần trực tiếp thực hiện và phần nhận hỗ trợ AI, bổ sung commit cá nhân nếu có. Hiện chưa có bằng chứng để khai thêm hoạt động cá nhân.
 
 ### Bằng chứng
 
-guards.py; guards_round1.py; tests/test_round1_guards.py; B7.1/B7.2.
+- lab10/guards.py; lab10/guards_round1.py; snapshot2a8b53bf; tests/test_round1_guards.py.
+- evidence/S6/prepared-ambiguous.txt, after-ambiguous.txt, after-clear-parcel.txt; Phiếu C C7/C9.
 
-### Đóng góp cá nhân tự thực hiện
+### Exit ticket — bản nháp để cá nhân chỉnh
 
-Chờ thành viên bổ sung theo thực tế, kèm commit hoặc dòng hồ sơ.
+- **Một điều học được:** Tôi rút ra rằng chọn đúng hãng phải dựa trên kiện cụ thể; khi thiếu định danh và nhiều kiện đều trễ thì chọn kiện trễ nhất vẫn là đoán, cần chặn trước khi ghi tiền.
+- **Một điều còn chưa chắc:** Tôi còn chưa chắc cách phát hiện tracking sai, mã kiện gắn nhầm thực tế và quyền ghi bỏ qua gate trong một hệ thống production.
 
-### Exit ticket
+### Xác nhận cá nhân và nộp bài
 
-Thành viên tự viết cuối buổi một điều học được và một điều còn chưa chắc.
+- [ ] Tôi đã đọc, chỉnh nội dung theo đóng góp/thông hiểu thực tế và ghi đúng việc dùng AI.
+- [ ] Tôi đã tự nộp link repo trên LMS.
 
 ## LeTuanDat-2A202603949
 
 ### Phần việc phụ trách
 
-Kỹ sư cổng — kiểm thử: Câu1.3; B0–B2/B7.3; eval/trace/test,checkpoint/prepared; monitor vòng2 sau thẻ.
+**Kỹ sư cổng — đánh giá và theo dõi.** Câu1.3; B0–B2/B7.3; eval/trace/test và mốc prepared; C0–C2/C8; lab10/monitors.py.
 
-### Nội dung đã chuẩn bị cho vai này với AI
+### Công việc và kết quả theo phân công
 
-Đã chạy18tests,2ticket adhoc,nền after/prepared110/110,harms0; chốt2a8b53bf. Chưa có thẻ để thiết kế monitor đặc thù hay chạy grade.
+- **Nhật ký và đánh giá ba mốc:** phụ trách tổng hợp B0–B2/C0–C2, trace và báo cáo base/prepared/after. Trên S6, pass_rate và pass^k lần lượt tăng từ 0,3333 lên 0,8333 rồi 1,0; giữ đủ mã lần chạy để truy nguyên từng kết luận.
+- **Kiểm thử và hồi quy:** phần việc kiểm tra có 21 test đạt, gồm 13 test công khai và 8 test bổ sung; hai ticket adhoc vòng 1 kiểm lời khai sai và dữ liệu gửi hãng. Bộ nền cuối đạt 110/110 lượt, S6 đạt 60/60 lượt, trong đó 20/20 lượt hợp lệ đạt; không có ca mới hỏng.
+- **Chỉ số theo dõi:** phụ trách ambiguous_parcel_rate trong monitors.py, chỉ dùng parcel_id và tracking, không dùng nhãn/score. Kết quả nền bằng 0; S6 bằng 0,166667, tương ứng 10/60 lượt chạy có yêu cầu mơ hồ.
+- **Đọc giới hạn bằng chứng:** tổng hợp kết quả PASS-VISIBLE và kiểm monitor sáng đèn, không diễn giải CI [1;1] trên mock thành bảo đảm 100% ngoài thực tế; kiểm thử ẩn chưa có trên máy.
 
-Codex thực hiện theo yêu cầu của Đức; Lê Tuấn Đạt cần tự kiểm chứng và ghi phần cá nhân thực sự làm, không mặc định tự nhận toàn bộ code/hồ sơ này.
+Các nội dung trên được Codex hỗ trợ chuẩn bị; Lê Tuấn Đạt cần xác nhận phần trực tiếp thực hiện và phần nhận hỗ trợ AI, bổ sung commit cá nhân nếu có. Hiện chưa có bằng chứng để khai thêm hoạt động cá nhân.
 
 ### Bằng chứng
 
-evidence/round1/; prepared R-base-prepared-20261119-154346-28ecf0; B0–B2/B7.3.
+- evidence/round1/tests.txt; evidence/S6/tests.txt; tests/test_round1_guards.py.
+- submission/runs/grade-report.json và report3mốc; runs/journal.jsonl; Phiếu C C0/C8.
 
-### Đóng góp cá nhân tự thực hiện
+### Exit ticket — bản nháp để cá nhân chỉnh
 
-Chờ thành viên bổ sung theo thực tế, kèm commit hoặc dòng hồ sơ.
+- **Một điều học được:** Tôi rút ra rằng phải đo prepared trước khi sửa, kiểm cả regression và dùng monitor không cần nhãn; metric mơ hồ có thể vẫn cao dù gate đã ngăn tác hại.
+- **Một điều còn chưa chắc:** Tôi còn chưa chắc độ đại diện của12ticket S6 và tín hiệu mơ hồ16.67% khi tỷ lệ đơn nhiều kiện, thiếu log hoặc tải thực thay đổi.
 
-### Exit ticket
+### Xác nhận cá nhân và nộp bài
 
-Thành viên tự viết cuối buổi một điều học được và một điều còn chưa chắc.
+- [ ] Tôi đã đọc, chỉnh nội dung theo đóng góp/thông hiểu thực tế và ghi đúng việc dùng AI.
+- [ ] Tôi đã tự nộp link repo trên LMS.
 
 ## NguyenMinhTriet-2A202603995
 
 ### Phần việc phụ trách
 
-Vận hành và pháp lý: Câu1.2/1.4; B4–B5/B6 con người/pháp lý; B7.5–B7.6; operations/legal; gom bài vòng2.
+**Vận hành và pháp lý.** Câu1.2/1.4; B4–B5/B6 phần con người/pháp lý; B7.5–B7.6; C3.2/C10/C11; operations/legal và gom bài.
 
-### Nội dung đã chuẩn bị cho vai này với AI
+### Công việc và kết quả theo phân công
 
-Đã điền PIC NV-TUNG,approver NV-HANH,1người/6ca giờ,SLA60phút,kiểm mẫu10%,decision_note và legal. Runbook mục tiêu dừng5phút/kế hoạch quá tải; alert/lịch trực/diễn tập thật chưa có. Chuẩn bị team/members trong submission.json, không điền thẻ/v2 giả.
+- **Cấu hình người và pháp lý:** phụ trách operations/legal với PIC NV-TUNG, người duyệt NV-HANH, một người trực xử lý 6 ca/giờ, SLA 60 phút, kiểm mẫu 10% và ghi chú quyết định. Các trường ghi chú/thông tin liên hệ cá nhân bị chặn khi gửi hãng; ghi lỗi phải có nguyên nhân được ghi nhận.
+- **HAZOP, checklist và runbook:** phụ trách B4–B5/B7.5–B7.6, C3.2/C10/C11. Runbook quy định gọi dự phòng khi backlog từ 3 ca hoặc thời gian chờ từ 30 phút; mục tiêu dừng thao tác liên quan trong 5 phút. Đây là kế hoạch, chưa xác nhận đã diễn tập thật.
+- **Đánh giá năng lực xử lý:** tổng hợp stress 14 ca cần duyệt đến cùng lúc: một người có thể làm ca cuối chờ 130 phút và 7 ca vượt SLA. Trên bộ S6 sau sửa, số ca ùn bằng 0, tỷ lệ vào luồng duyệt/kiểm lại là 0,25; không lấy kết quả này thay bằng chứng chịu tải đỉnh thực tế.
+- **Hồ sơ nộp và bảo vệ bên thứ ba:** phụ trách phần tác động lên hãng/tài xế, risk register, quy trình đối soát và cấu trúc submission.json. Bộ nộp có đủ code/config hai vòng, ba phiếu, report ba mốc và journal; kiểm tra 20 đường dẫn bắt buộc cùng 19 hash manifest đều đạt. S6 sau sửa không còn lỗi hãng oan hoặc rò rỉ PII trong dữ liệu đã đo.
 
-Codex thực hiện theo yêu cầu của Đức; Nguyễn Minh Triết cần tự kiểm chứng và ghi phần cá nhân thực sự làm, không mặc định tự nhận toàn bộ code/hồ sơ này.
+Các nội dung trên được Codex hỗ trợ chuẩn bị; Nguyễn Minh Triết cần xác nhận phần trực tiếp thực hiện và phần nhận hỗ trợ AI, bổ sung commit cá nhân nếu có. Hiện chưa có bằng chứng để khai thêm hoạt động cá nhân.
 
 ### Bằng chứng
 
-operating_gates.json/round1; A1/A2; B4/B5/B7.5/B7.6; submission.json.
+- config/operating_gates.json và operating_gates.round1.json; Phiếu B B4/B5/B7.5/B7.6.
+- Phiếu C C3.2/C10/C11; submission/manifest.json; evidence/S6/submission-check.txt.
 
-### Đóng góp cá nhân tự thực hiện
+### Exit ticket — bản nháp để cá nhân chỉnh
 
-Chờ thành viên bổ sung theo thực tế, kèm commit hoặc dòng hồ sơ.
+- **Một điều học được:** Tôi rút ra rằng bảo vệ bên thứ ba cần đúng đơn vị trách nhiệm và người xử lý khiếu nại; payload đúng schema chưa thay thế quy trình đối soát và phản hồi.
+- **Một điều còn chưa chắc:** Tôi còn chưa chắc một người duyệt có đáp ứng tải đỉnh thật và cam kết dừng5phút khi chưa có kênh cảnh báo, lịch trực và diễn tập thực tế.
 
-### Exit ticket
+### Xác nhận cá nhân và nộp bài
 
-Thành viên tự viết cuối buổi một điều học được và một điều còn chưa chắc.
+- [ ] Tôi đã đọc, chỉnh nội dung theo đóng góp/thông hiểu thực tế và ghi đúng việc dùng AI.
+- [ ] Tôi đã tự nộp link repo trên LMS.
+
+## Kết quả chung cuối cùng
+
+- Thẻ S6; grade `R-S6-grade-20261119-161924-4fd606`: **PASS-VISIBLE**, kiểm thử ẩn chưa có trên máy.
+- S6:60/60; nền:110/110;21tests đạt; hoàn sai/lỗi hãng oan/PII đều0 trên dữ liệu đã đo.
+- Monitor ambiguous_parcel_rate: nền0, S6 0.166667; snapshot2a8b53bf và tiêu chí216e4226 còn nguyên.
+- Phiếu A được diễn giải bổ sung sau baseline; không ghi nhận ngược thời gian là đã hoàn tất trước baseline. Commit ký tiêu chí vẫn có trước lần đánh giá đầu tiên.
+- V1/v2 ghi Cải tiến thêm trong hồ sơ, hiện là đề xuất để nhóm đọc và xác nhận; không ghi thay biên bản họp hay chữ ký.
+- Cần đối chiếu PRD/eval card Lab9 khi có nguồn, kiểm chứng vận hành thật trước pilot và thực hiện demo/phản biện theo lớp.

@@ -1,3 +1,16 @@
+# Cập nhật hiện tại: đã xử lý S6
+
+Phần dưới dấu phân cách là bàn giao vòng1 trước nhận thẻ, được giữ làm lịch sử. Trạng thái mới thay thế các dòng "chưa có thẻ/chưa có monitor" ở bản cũ:
+
+- S6 đã nhận; byte gốc thẻ khớp MANIFEST, .gitattributes giữ LF để tránh lỗi integrity Windows.
+- Thêm guard: nhiều kiện trễ, thiếu parcel_id thì chuyển người trước ghi tiền/trách nhiệm. Thêm ambiguous_parcel_rate không dùng nhãn.
+- Grade R-S6-grade-20261119-161924-4fd606: PASS-VISIBLE;S6 60/60,nền110/110;21tests qua;hidden chưa có. Snapshot2a8b53bf và tiêu chí216e4226 còn nguyên.
+- Phiếu C và submission.json đã điền theo bằng chứng; v1/v2 ghi Cải tiến thêm theo đề xuất hồ sơ, nhóm cần rà soát/xác nhận. Chưa coi alert/diễn tập/exit ticket cá nhân đã hoàn tất.
+- Kiểm tra/gom: python -m lab10.check_submission --collect; kết quả đủ thành phần không có nghĩa đạt testẩn hoặc được phép chạy production.
+- Sau rà soát, chạy git diff --stat, git add . rồi git commit -m "LAB 10: xu ly S6, hoan thien ho so vong 2" và git push -u origin main. Codex chưa commit/push.
+
+---
+
 # Trạng thái kết thúc vòng 1, chờ thẻ sự cố
 
 Đã chuẩn bị phần việc kỹ thuật và hồ sơ của bốn vai bằng Codex theo yêu cầu của Đức. Các thành viên cần tự đọc, hiểu và xác nhận; không coi nội dung được hỗ trợ là biên bản họp hay chữ ký của cá nhân.
